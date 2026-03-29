@@ -1,4 +1,3 @@
-from selenium.webdriver.support import expected_conditions as EC
 from locators import Locators 
 from utils.test_data import TEST_USER_EMAIL, TEST_USER_PASSWORD
 from utils.helpers import click_element, fill_field, is_element_present 
