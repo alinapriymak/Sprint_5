@@ -1,17 +1,17 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from utils.urls import BASE_URL
 from locators import Locators
 from utils.test_data import find_element, click_element, fill_field, is_element_present
 from utils.generate_data import generate_email, generate_password, TEST_USER_EMAIL, TEST_USER_PASSWORD
 
 
 class TestRegistration:
-    BASE_URL = "https://qa-desk.stand.praktikum-services.ru/"
     
     def test_successful_registration(self, driver):
         #Тест 1: Успешная регистрация пользователя
         # 1. Открыть главную страницу
-        driver.get(self.BASE_URL)
+        driver.get(BASE_URL)
         
         # 2. Нажать кнопку «Вход и регистрация»
         click_element(driver, Locators.LOGIN_REGISTRATION_BUTTON)
@@ -37,7 +37,7 @@ class TestRegistration:
         
         # 6. Проверка: переход на главную страницу
         current_url = driver.current_url
-        expected_url = self.BASE_URL
+        expected_url = BASE_URL
     
         assert current_url == expected_url, \
             f"   Ожидаемый URL: {expected_url}\n" \
@@ -58,7 +58,7 @@ class TestRegistration:
     def test_registration_with_invalid_email(self, driver):
         #Тест 2: Регистрация с email не по маске
         # 1. Открыть главную страницу
-        driver.get(self.BASE_URL)
+        driver.get(BASE_URL)
         
         # 2. Нажать кнопку «Вход и регистрация»
         click_element(driver, Locators.LOGIN_REGISTRATION_BUTTON)
@@ -86,7 +86,7 @@ class TestRegistration:
     def test_registration_existing_user(self, driver):
         #Тест 3: Регистрация уже существующего пользователя
         # 1. Открыть главную страницу
-        driver.get(self.BASE_URL)
+        driver.get(BASE_URL)
         
         # 2. Нажать кнопку «Вход и регистрация»
         click_element(driver, Locators.LOGIN_REGISTRATION_BUTTON)

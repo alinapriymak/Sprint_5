@@ -1,17 +1,17 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from utils.urls import BASE_URL
 from locators import Locators 
 from utils.generate_data import TEST_USER_EMAIL, TEST_USER_PASSWORD
 from utils.test_data import click_element, fill_field, is_element_present 
 
 
 class TestLogout:
-    BASE_URL = "https://qa-desk.stand.praktikum-services.ru/"
     
     def test_successful_logout(self, driver):
         #Тест 5: Успешный выход пользователя
         # 1. Авторизация
-        driver.get(self.BASE_URL)
+        driver.get(BASE_URL)
         click_element(driver, Locators.LOGIN_REGISTRATION_BUTTON)
         fill_field(driver, Locators.EMAIL_INPUT, TEST_USER_EMAIL)
         fill_field(driver, Locators.PASSWORD_INPUT, TEST_USER_PASSWORD)

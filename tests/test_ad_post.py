@@ -4,15 +4,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from locators import Locators
 from utils.test_data import find_element, click_element, fill_field, get_text
 from utils.generate_data import generate_email, generate_password, generate_ad_description, generate_ad_title, generate_price, TEST_USER_EMAIL, TEST_USER_PASSWORD
+from utils.urls import BASE_URL
 
 
 class TestCreateAdvertisement:
-    BASE_URL = "https://qa-desk.stand.praktikum-services.ru/"
     
     def test_create_ad_unauthorized(self, driver):
         #Тест 6: Создание объявления неавторизованным пользователем
         # 1. Открыть главную страницу
-        driver.get(self.BASE_URL)
+        driver.get(BASE_URL)
         
         # 2. Нажать кнопку «Разместить объявление»
         click_element(driver, Locators.CREATE_AD_BUTTON)
@@ -28,7 +28,7 @@ class TestCreateAdvertisement:
     def test_create_ad_authorized(self, driver):
         #Тест 7: Создание объявления авторизованным пользователем
         # 1. Авторизация
-        driver.get(self.BASE_URL)
+        driver.get(BASE_URL)
         click_element(driver, Locators.LOGIN_REGISTRATION_BUTTON)
         fill_field(driver, Locators.EMAIL_INPUT, TEST_USER_EMAIL)
         fill_field(driver, Locators.PASSWORD_INPUT, TEST_USER_PASSWORD)
