@@ -83,17 +83,14 @@ class TestCreateAdvertisement:
         # 10. Нажать кнопку «Опубликовать»
         click_element(driver, Locators.PUBLISH_BUTTON)
     
-        # 11. Дождаться сохранения
-        time.sleep(5)  
-
         driver.refresh()
     
-        # 12. Перейти в профиль пользователя
+        # 11. Перейти в профиль пользователя
         click_element(driver, Locators.USER_AVATAR)
 
         driver.refresh()
     
-        # 13. Проверка: в блоке «Мои объявления» отображается созданное объявление
+        # 12. Проверка: в блоке «Мои объявления» отображается созданное объявление
         WebDriverWait(driver, 10).until(
         EC.presence_of_element_located(Locators.LAST_AD_CARD)
         )
