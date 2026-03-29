@@ -38,4 +38,4 @@ class TestLogin:
         assert is_element_present(driver, Locators.USER_NAME), \
             "Имя пользователя не отображается после входа"
         
-        print(f"✅ Тест пройден: пользователь {TEST_USER_EMAIL} успешно вошел в систему")
+   

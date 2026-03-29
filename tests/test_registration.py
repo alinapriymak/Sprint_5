@@ -50,8 +50,6 @@ class TestRegistration:
         
         # 8. Проверка: отображается имя User
         assert is_element_present(driver, Locators.USER_NAME)
-        
-        print(f"✅ Тест пройден: пользователь {email} успешно зарегистрирован")
 
 
     
@@ -79,8 +77,7 @@ class TestRegistration:
         # 7. Проверка: отображается сообщение «Ошибка»
         assert is_element_present(driver, Locators.EMAIL_ERROR), \
             "Сообщение об ошибке не отображается под полем Email"
-        
-        print("✅ Тест пройден: валидация некорректного email работает")
+    
     
 
     def test_registration_existing_user(self, driver):
@@ -114,4 +111,3 @@ class TestRegistration:
         assert is_element_present(driver, Locators.EMAIL_ERROR), \
             "Сообщение об ошибке не отображается для существующего пользователя"
         
-        print("✅ Тест пройден: попытка регистрации существующего пользователя отклонена")

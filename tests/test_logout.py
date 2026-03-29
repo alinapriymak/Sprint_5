@@ -43,5 +43,4 @@ class TestLogout:
         assert is_element_present(driver, Locators.LOGIN_REGISTRATION_BUTTON), \
             "Кнопка 'Вход и регистрация' не отображается после выхода"
         
-        print("✅ Тест пройден: пользователь успешно вышел из системы")
 

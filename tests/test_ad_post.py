@@ -44,7 +44,6 @@ class TestCreateAdvertisement:
 
         # 4. Получить количество существующих объявлений 
         old_ad_count = len(driver.find_elements(*Locators.LAST_AD_CARD))
-        print(f"📊 Было объявлений до теста: {old_ad_count}")
 
         # 5. Нажать "Разместить объявление"
         click_element(driver, Locators.CREATE_AD_BUTTON)
@@ -101,11 +100,8 @@ class TestCreateAdvertisement:
     
         # Получить количество объявлений после создания
         new_ad_count = len(driver.find_elements(*Locators.LAST_AD_CARD))
-        print(f"📊 Стало объявлений после теста: {new_ad_count}")
 
         # Проверяем, что количество объявлений увеличилось на 1
         assert new_ad_count == old_ad_count + 1, \
             f"Количество объявлений не увеличилось. Было: {old_ad_count}, Стало: {new_ad_count}"
-    
-        print(f"✅ Тест пройден: объявление успешно создано")
     
