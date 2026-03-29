@@ -1,3 +1,4 @@
+import time
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import Locators
@@ -84,7 +85,6 @@ class TestCreateAdvertisement:
         click_element(driver, Locators.PUBLISH_BUTTON)
     
         # 11. Дождаться сохранения
-        import time
         time.sleep(5)  
 
         driver.refresh()
