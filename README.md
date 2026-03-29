@@ -46,7 +46,9 @@ Sprint_5/
 ├── requirements.txt # Зависимости проекта
 ├── utils/
 │ ├── generate_data.py # Генерация тестовых данных
-│ └── test_data.py # Вспомогательные функции (click, fill, etc.)
+│ └── test_data.py # Константы
+│ └── urls.py
+│ └── helpers.py # Вспомогательные функции (click, fill, etc.)
 ├── tests/
 │ ├── test_registration.py # Тесты регистрации (3 теста)
 │ ├── test_login.py # Тест входа (1 тест)
@@ -85,7 +87,7 @@ pip install -r requirements.txt
 ```
 
 ### 3. Настройка тестовых данных
-В файле utils/generate_data.py укажите реальные учетные данные существующего пользователя:
+В файле utils/test_data.py укажите реальные учетные данные существующего пользователя:
 
 TEST_USER_EMAIL = "your_email@example.com"
 
