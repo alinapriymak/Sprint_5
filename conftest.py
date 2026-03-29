@@ -19,11 +19,6 @@ def driver():
     
     driver.quit()
 
-#Фикстура для явного ожидания
-@pytest.fixture
-def wait(driver):
-    return WebDriverWait(driver, 10)
-
 
 
 
