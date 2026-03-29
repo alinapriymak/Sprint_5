@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import Locators
 from utils.test_data import find_element, click_element, fill_field, get_text
-from utils.generate_data import generate_email, generate_password, generate_ad_description, generate_ad_title, generate_price, TEST_USER_EMAIL, TEST_USER_PASSWORD
+from utils.generate_data import generate_email, generate_ad_description, generate_ad_title, generate_price, TEST_USER_EMAIL, TEST_USER_PASSWORD, AUTH_MODAL_TITLE_TEXT
 from utils.urls import BASE_URL
 
 
@@ -20,7 +20,7 @@ class TestCreateAdvertisement:
         # 3. Проверка: отображается модальное окно
         modal_title = get_text(driver, Locators.AUTH_MODAL_TITLE)
         
-        assert modal_title == "Чтобы разместить объявление, авторизуйтесь", \
+        assert modal_title == AUTH_MODAL_TITLE_TEXT, \
             f"Неверный заголовок модального окна. Ожидалось: 'Чтобы разместить объявление, авторизуйтесь', Получено: '{modal_title}'"
         
         print("✅ Тест пройден: неавторизованный пользователь не может создать объявление")
