@@ -2,7 +2,6 @@ import random
 import uuid
 
 
-
 #Генерация имейла 
 def generate_email():
     return f"test_{uuid.uuid4().hex[:10]}@test.com"

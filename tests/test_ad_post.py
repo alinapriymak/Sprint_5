@@ -2,8 +2,9 @@ import time
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import Locators
-from utils.test_data import find_element, click_element, fill_field, get_text
-from utils.generate_data import generate_email, generate_ad_description, generate_ad_title, generate_price, TEST_USER_EMAIL, TEST_USER_PASSWORD, AUTH_MODAL_TITLE_TEXT
+from utils.helpers import click_element, fill_field, get_text
+from utils.generate_data import generate_ad_description, generate_ad_title, generate_price
+from utils.test_data import TEST_USER_EMAIL, TEST_USER_PASSWORD, AUTH_MODAL_TITLE_TEXT
 from utils.urls import BASE_URL
 
 

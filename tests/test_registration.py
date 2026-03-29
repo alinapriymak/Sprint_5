@@ -2,8 +2,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from utils.urls import BASE_URL
 from locators import Locators
-from utils.test_data import find_element, click_element, fill_field, is_element_present
-from utils.generate_data import generate_email, generate_password, TEST_USER_EMAIL, TEST_USER_PASSWORD
+from utils.helpers import find_element, click_element, fill_field, is_element_present
+from utils.generate_data import generate_email, generate_password
+from utils.test_data import TEST_USER_EMAIL, TEST_USER_PASSWORD
 
 
 class TestRegistration:
